@@ -13,7 +13,7 @@ const userSchema = new Schema({
     },
     password: {
         type: String,
-        required: true
+        // required: true
     },
     isVerified: {
         type: Boolean,
@@ -23,16 +23,7 @@ const userSchema = new Schema({
         type: Boolean,
         default: false
     },
-    oauthProvider: {
-        type: String,
-        enum: ['google', 'facebook'],
-        default: null
-    },
-    oauthId: {
-        type: String,
-        unique: true,
-        sparse: true
-    },
+    auth0Id: { type: String },
 })
 
 module.exports = mongoose.model("User", userSchema)
